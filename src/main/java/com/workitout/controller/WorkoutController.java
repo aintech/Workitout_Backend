@@ -1,5 +1,7 @@
 package com.workitout.controller;
 
+import com.workitout.model.ExerciseRepository;
+import com.workitout.model.RoundRepository;
 import com.workitout.model.Workout;
 import com.workitout.model.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,12 @@ public class WorkoutController {
     
     @Autowired
     private WorkoutRepository repo;
+    
+    @Autowired
+    private ExerciseRepository exerRepo;
+    
+    @Autowired
+    private RoundRepository roundRepo;
     
     @GetMapping
     public Iterable<Workout> getAll () {
@@ -49,7 +57,12 @@ public class WorkoutController {
     
     @DeleteMapping(value = "/{id}")
     public String delete (@PathVariable Integer id) {
-        repo.deleteById(id);
+        Workout workout = repo.findById(id).get();
+        workout.getExercises().forEach(exercise -> {
+            exercise.getRounds().forEach(round -> roundRepo.delete(round));
+            exerRepo.delete(exercise);
+        });
+        repo.delete(workout);
         return "";
     }
 }
