@@ -3,6 +3,7 @@ package com.workitout.controller;
 import com.workitout.model.Workout;
 import com.workitout.model.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,10 +40,16 @@ public class WorkoutController {
     }
     
     @PutMapping(value = "/{id}")
-    public Workout update (@PathVariable String id, @RequestBody Workout workout) {
-        Workout work = repo.findById(Integer.parseInt(id)).get();
+    public Workout update (@PathVariable Integer id, @RequestBody Workout workout) {
+        Workout work = repo.findById(id).get();
         work.setName(workout.getName());
         repo.save(work);
         return work;
+    }
+    
+    @DeleteMapping(value = "/{id}")
+    public String delete (@PathVariable Integer id) {
+        repo.deleteById(id);
+        return "";
     }
 }

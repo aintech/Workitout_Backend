@@ -3,11 +3,8 @@ package com.workitout.controller;
 import com.workitout.model.ExerciseRepository;
 import com.workitout.model.Round;
 import com.workitout.model.RoundRepository;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,9 +33,9 @@ public class RoundController {
         return round;
     }
     
-    @PutMapping()
-    public Round update (@RequestBody Round round) {
-        Round rnd = repo.findById(round.getId()).get();
+    @PutMapping(value = "/{id}")
+    public Round update (@PathVariable Integer id, @RequestBody Round round) {
+        Round rnd = repo.findById(id).get();
         rnd.setIndex(round.getIndex());
         rnd.setRepeat(round.getRepeat());
         rnd.setTimeout(round.getTimeout());
@@ -46,8 +43,13 @@ public class RoundController {
         return rnd;
     }
     
-    @GetMapping()
-    public Iterable<Round> getAll () {
-        return repo.findAll();
+    @DeleteMapping(value = "/{id}")
+    public String delete (@PathVariable Integer id) {
+        repo.deleteById(id);
+        return "";
+    }
+    
+    public void delete (Round round) {
+        repo.delete(round);
     }
 }
