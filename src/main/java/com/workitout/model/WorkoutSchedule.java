@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "_workout_schedule")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class WorkoutSchedule implements Serializable {
     
     @Id
@@ -29,7 +30,6 @@ public class WorkoutSchedule implements Serializable {
     @Column(name = "_id")
     private int id;
     
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "_workout_id")
     private Workout workout;

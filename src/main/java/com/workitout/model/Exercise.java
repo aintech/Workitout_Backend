@@ -22,7 +22,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "_exercise")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Exercise implements Serializable {
     
     @Id
@@ -46,7 +46,7 @@ public class Exercise implements Serializable {
     private Integer timeout;
     
     @JsonIgnore
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "_workout_id")
     private Workout workout;
     
