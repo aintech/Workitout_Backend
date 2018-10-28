@@ -29,8 +29,7 @@ public class RoundController {
     @PostMapping(value = "/{exerciseId}")
     public Round save (@PathVariable Integer exerciseId, @RequestBody Round round) {
         round.setExercise(exerRepo.findById(exerciseId).get());
-        repo.save(round);
-        return round;
+        return repo.save(round);
     }
     
     @PutMapping(value = "/{id}")
@@ -39,8 +38,7 @@ public class RoundController {
         rnd.setIndex(round.getIndex());
         rnd.setRepeat(round.getRepeat());
         rnd.setTimeout(round.getTimeout());
-        repo.save(rnd);
-        return rnd;
+        return repo.save(rnd);
     }
     
     @DeleteMapping(value = "/{id}")

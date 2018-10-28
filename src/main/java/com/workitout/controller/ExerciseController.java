@@ -2,6 +2,7 @@ package com.workitout.controller;
 
 import com.workitout.model.Exercise;
 import com.workitout.model.ExerciseRepository;
+import com.workitout.model.MediaRepository;
 import com.workitout.model.RoundRepository;
 import com.workitout.model.Workout;
 import com.workitout.model.WorkoutRepository;
@@ -32,12 +33,14 @@ public class ExerciseController {
     @Autowired
     private RoundRepository roundRepo;
     
+    @Autowired
+    private MediaRepository mediaRepo;
+    
     @PostMapping(value = "/{workoutId}")
     public Exercise save (@PathVariable Integer workoutId, @RequestBody Exercise exercise) {
         Workout workout = workRepo.findById(workoutId).get();
         exercise.setWorkout(workout);
-        repo.save(exercise);
-        return exercise;
+        return repo.save(exercise);
     }
     
     @PutMapping(value = "/{id}")
@@ -46,16 +49,17 @@ public class ExerciseController {
         exer.setIndex(exercise.getIndex());
         exer.setInstruction(exercise.getInstruction());
         exer.setName(exercise.getName());
+        exer.setExternalLink(exercise.getExternalLink());
         exer.setTimeout(exercise.getTimeout());
         exer.setWeight(exercise.getWeight());
-        repo.save(exer);
-        return exer;
+        return repo.save(exer);
     }
     
     @DeleteMapping(value = "/{id}")
     public String delete (@PathVariable Integer id) {
         Exercise exercise = repo.findById(id).get();
-        exercise.getRounds().forEach(round -> {roundRepo.delete(round);});
+        exercise.getRounds().forEach(round -> { roundRepo.delete(round); });
+        exercise.getMedias().forEach(media -> { mediaRepo.delete(media); });
         repo.delete(exercise);
         return "";
     }

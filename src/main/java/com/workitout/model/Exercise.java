@@ -36,6 +36,9 @@ public class Exercise implements Serializable {
     @Column(name = "_name")
     private String name;
     
+    @Column(name = "_external_link")
+    private String externalLink;
+    
     @Column(name = "_instruction")
     private String instruction;
     
@@ -53,6 +56,9 @@ public class Exercise implements Serializable {
     @OneToMany(mappedBy = "exercise")
     private List<Round> rounds;
     
+    @OneToMany(mappedBy = "exercise")
+    private List<Media> medias;
+    
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
@@ -61,6 +67,9 @@ public class Exercise implements Serializable {
     
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public String getExternalLink() { return externalLink; }
+    public void setExternalLink(String externalLink) { this.externalLink = externalLink; }
 
     public String getInstruction() { return instruction; }
     public void setInstruction(String instruction) { this.instruction = instruction; }
@@ -76,4 +85,7 @@ public class Exercise implements Serializable {
 
     public List<Round> getRounds() { return rounds; }
     public void setRounds(List<Round> rounds) { this.rounds = rounds;}
+
+    public List<Media> getMedias() { return medias; }
+    public void setMedias(List<Media> medias) { this.medias = medias; }
 }
