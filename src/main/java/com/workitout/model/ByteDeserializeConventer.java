@@ -1,19 +1,33 @@
 package com.workitout.model;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  *
  * @author Aintech
  */
-public class ByteDeserializeConventer extends StdConverter<LinkedHashMap<Integer, Integer>, byte[]> {
+public class ByteDeserializeConventer extends StdConverter<Object, byte[]> {
 
     @Override
-    public byte[] convert(LinkedHashMap<Integer, Integer> value) {
-        byte[] source = new byte[value.size()];
-        for (int i = 0; i < value.size(); i++) {
-            source[i] = (byte)(int)value.get(i);
+    public byte[] convert(Object value) {
+        byte[] source = new byte[0];
+        if (value instanceof Map) {
+            LinkedHashMap<Object, Integer> map = (LinkedHashMap<Object, Integer>)value;
+
+            source = new byte[map.size()];
+            if (map.keySet().contains("0")) {
+                for (Map.Entry<Object, Integer> entry : map.entrySet()) {
+                    source[Integer.parseInt(entry.getKey().toString())] = (byte)(int)entry.getValue();
+                }
+            } else {
+                for (Map.Entry<Object, Integer> entry : map.entrySet()) {
+                    source[(Integer)entry.getKey()] = (byte)(int)entry.getValue();
+                }
+            }
         }
         return source;
     }

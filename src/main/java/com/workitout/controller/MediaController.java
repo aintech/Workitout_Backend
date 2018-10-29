@@ -45,7 +45,9 @@ public class MediaController {
     public Media update (@PathVariable Integer id, @RequestBody Media media) {
         Media med = repo.findById(id).get();
         med.setIndex(media.getIndex());
-        med.setSource(media.getSource());
+        if (media.getSource().length > 0) {
+            med.setSource(media.getSource());
+        }
         med.setUrl(media.getUrl());
         return repo.save(med);
     }
