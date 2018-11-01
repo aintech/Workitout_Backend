@@ -1,5 +1,6 @@
 package com.workitout.model;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -7,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface WorkoutScheduleRepository extends CrudRepository<WorkoutSchedule, Integer> {
 
+    public List<WorkoutSchedule> getByWorkoutId (Integer workoutId);
 }

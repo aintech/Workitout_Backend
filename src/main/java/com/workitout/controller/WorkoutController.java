@@ -1,9 +1,13 @@
 package com.workitout.controller;
 
 import com.workitout.model.ExerciseRepository;
+import com.workitout.model.MediaRepository;
 import com.workitout.model.RoundRepository;
 import com.workitout.model.Workout;
 import com.workitout.model.WorkoutRepository;
+import com.workitout.model.WorkoutSchedule;
+import com.workitout.model.WorkoutScheduleRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,10 +30,16 @@ public class WorkoutController {
     private WorkoutRepository repo;
     
     @Autowired
+    private WorkoutScheduleRepository scheduleRepo;
+    
+    @Autowired
     private ExerciseRepository exerRepo;
     
     @Autowired
     private RoundRepository roundRepo;
+    
+    @Autowired
+    private MediaRepository mediaRepo;
     
     @GetMapping
     public Iterable<Workout> getAll () {
@@ -58,8 +68,11 @@ public class WorkoutController {
     @DeleteMapping(value = "/{id}")
     public String delete (@PathVariable Integer id) {
         Workout workout = repo.findById(id).get();
+        List<WorkoutSchedule> schedules = scheduleRepo.getByWorkoutId(id);
+        scheduleRepo.deleteAll(schedules);
         workout.getExercises().forEach(exercise -> {
             exercise.getRounds().forEach(round -> roundRepo.delete(round));
+            exercise.getMedias().forEach(media -> mediaRepo.delete(media));
             exerRepo.delete(exercise);
         });
         repo.delete(workout);
