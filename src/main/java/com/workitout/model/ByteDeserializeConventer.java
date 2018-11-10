@@ -1,8 +1,6 @@
 package com.workitout.model;
 
-import com.fasterxml.jackson.databind.util.StdConverter;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import com.fasterxml.jackson.databind.util.StdConverter;    
 import java.util.LinkedHashMap;
 import java.util.Map;
 
