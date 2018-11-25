@@ -6,6 +6,4 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Yaremchuk E.N. (aka Aintech)
  */
-public interface WorkoutRepository extends CrudRepository<Workout, Integer> {
-
-}
+public interface WorkoutRepository extends CrudRepository<Workout, Integer> {}

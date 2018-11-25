@@ -42,8 +42,9 @@ public class Exercise implements Serializable {
     @Column(name = "_instruction")
     private String instruction;
     
+    //Weight int gramms
     @Column(name = "_weight")
-    private String weight;
+    private int weight;
     
     @Column(name = "_timeout")
     private Integer timeout;
@@ -74,8 +75,8 @@ public class Exercise implements Serializable {
     public String getInstruction() { return instruction; }
     public void setInstruction(String instruction) { this.instruction = instruction; }
 
-    public String getWeight() { return weight; }
-    public void setWeight(String weight) { this.weight = weight; }
+    public int getWeight() { return weight; }
+    public void setWeight(int weight) { this.weight = weight; }
     
     public Integer getTimeout() { return timeout; }
     public void setTimeout(Integer timeout) { this.timeout = timeout; }

@@ -1,18 +1,16 @@
 package com.workitout.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -37,7 +35,13 @@ public class WorkoutSchedule implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "_date")
     private Date date;
+    
+    @Column(name = "_performed")
+    private boolean performed;
 
+    @OneToMany(mappedBy = "workoutSchedule")
+    private List<WorkoutHistory> workoutHistories;
+    
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -46,4 +50,10 @@ public class WorkoutSchedule implements Serializable {
 
     public Date getDate() { return date; }
     public void setDate(Date date) { this.date = date; }
+
+    public boolean isPerformed() { return performed; }
+    public void setPerformed(boolean performed) { this.performed = performed; }
+
+    public List<WorkoutHistory> getWorkoutHistories() { return workoutHistories; }
+    public void setWorkoutHistories(List<WorkoutHistory> workoutHistories) { this.workoutHistories = workoutHistories; }
 }
