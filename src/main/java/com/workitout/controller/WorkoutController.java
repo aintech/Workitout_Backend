@@ -47,8 +47,8 @@ public class WorkoutController {
     }
     
     @GetMapping(value = "/{id}")
-    public Workout get (@PathVariable String id) {
-        return repo.findById(Integer.parseInt(id)).get();
+    public Workout get (@PathVariable Integer id) {
+        return repo.findById(id).get();
     }
     
     @PostMapping
