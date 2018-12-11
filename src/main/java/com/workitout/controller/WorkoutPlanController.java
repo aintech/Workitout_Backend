@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +43,14 @@ public class WorkoutPlanController {
     @PostMapping
     public WorkoutPlan save (@RequestBody WorkoutPlan workoutPlan) {
         return repo.save(workoutPlan);
+    }
+    
+    @PutMapping
+    public WorkoutPlan update(@RequestBody WorkoutPlan workoutPlan) {
+        WorkoutPlan plan = repo.findById(workoutPlan.getId()).get();
+        plan.setIndex(workoutPlan.getIndex());
+        plan.setName(workoutPlan.getName());
+        return repo.save(plan);
     }
     
     @DeleteMapping(value = "/{id}")

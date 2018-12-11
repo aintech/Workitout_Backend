@@ -5,6 +5,7 @@ import com.workitout.model.WorkoutPlanRepository;
 import com.workitout.model.WorkoutToPlanBinding;
 import com.workitout.model.WorkoutToPlanBindingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,5 +32,11 @@ public class WorkoutPlanToBindingController {
         WorkoutPlan plan = planRepo.findById(workoutPlanId).get();
         binding.setWorkoutPlan(plan);
         return repo.save(binding);
+    }
+    
+    @DeleteMapping(value = "/{id}")
+    public String delete (@PathVariable Integer id) {
+        repo.deleteById(id);
+        return "";
     }
 }

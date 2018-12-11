@@ -7,6 +7,8 @@ import com.workitout.model.Workout;
 import com.workitout.model.WorkoutRepository;
 import com.workitout.model.WorkoutSchedule;
 import com.workitout.model.WorkoutScheduleRepository;
+import com.workitout.model.WorkoutToPlanBinding;
+import com.workitout.model.WorkoutToPlanBindingRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -41,6 +43,9 @@ public class WorkoutController {
     @Autowired
     private MediaRepository mediaRepo;
     
+    @Autowired
+    private WorkoutToPlanBindingRepository bindingRepo;
+    
     @GetMapping
     public Iterable<Workout> getAll () {
         return repo.findAll();
@@ -70,6 +75,8 @@ public class WorkoutController {
         Workout workout = repo.findById(id).get();
         List<WorkoutSchedule> schedules = scheduleRepo.getByWorkoutId(id);
         scheduleRepo.deleteAll(schedules);
+        Iterable<WorkoutToPlanBinding> bindings = bindingRepo.getByWorkoutId(id);
+        bindingRepo.deleteAll(bindings);
         workout.getExercises().forEach(exercise -> {
             exercise.getRounds().forEach(round -> roundRepo.delete(round));
             exercise.getMedias().forEach(media -> mediaRepo.delete(media));
