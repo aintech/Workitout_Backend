@@ -27,6 +27,9 @@ public class WorkoutPlan {
     
     @Column(name = "_index")
     private int index;
+
+    @Column(name = "_scheduled")
+    private boolean scheduled;
     
     @OneToMany(mappedBy = "workoutPlan")
     private List<WorkoutToPlanBinding> bindings;
@@ -42,4 +45,7 @@ public class WorkoutPlan {
 
     public List<WorkoutToPlanBinding> getBindings() { return bindings; }
     public void setBindings(List<WorkoutToPlanBinding> bindings) { this.bindings = bindings; }
+
+    public boolean isScheduled() { return scheduled; }
+    public void setScheduled(boolean scheduled) { this.scheduled = scheduled; }
 }

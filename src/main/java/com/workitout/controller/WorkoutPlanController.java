@@ -50,6 +50,7 @@ public class WorkoutPlanController {
         WorkoutPlan plan = repo.findById(workoutPlan.getId()).get();
         plan.setIndex(workoutPlan.getIndex());
         plan.setName(workoutPlan.getName());
+        plan.setScheduled(workoutPlan.isScheduled());
         return repo.save(plan);
     }
     
