@@ -1,8 +1,6 @@
 package com.workitout.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
@@ -22,7 +20,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "_exercise")
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Exercise implements Serializable {
     
     @Id
