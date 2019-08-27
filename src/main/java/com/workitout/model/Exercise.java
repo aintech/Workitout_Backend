@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +35,16 @@ public class Exercise implements Serializable {
     
     @Column(name = "_name")
     private String name;
-    
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "_type")
+    private ExerciseType type;
+
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = MuscleGroup.class)
+    @Column(name = "_muscle_groups")
+    private List<MuscleGroup> muscleGroups;
+
     @Column(name = "_external_link")
     private String externalLink;
     
@@ -56,7 +68,7 @@ public class Exercise implements Serializable {
     
     @OneToMany(mappedBy = "exercise")
     private List<Media> medias;
-    
+
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
@@ -65,6 +77,9 @@ public class Exercise implements Serializable {
     
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public ExerciseType getType() { return type; }
+    public void setType(ExerciseType type) { this.type = type; }
 
     public String getExternalLink() { return externalLink; }
     public void setExternalLink(String externalLink) { this.externalLink = externalLink; }
@@ -86,4 +101,14 @@ public class Exercise implements Serializable {
 
     public List<Media> getMedias() { return medias; }
     public void setMedias(List<Media> medias) { this.medias = medias; }
+
+    public void updateBy(Exercise exercise) {
+        setIndex(exercise.getIndex());
+        setInstruction(exercise.getInstruction());
+        setName(exercise.getName());
+        setExternalLink(exercise.getExternalLink());
+        setTimeout(exercise.getTimeout());
+        setWeight(exercise.getWeight());
+        setType(exercise.getType());
+    }
 }
