@@ -11,8 +11,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -59,13 +58,12 @@ public class Exercise implements Serializable {
     private Integer timeout;
     
     @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "_workout_id")
-    private Workout workout;
+    @ManyToMany(mappedBy = "exercises")
+    private List<Workout> workouts;
     
     @OneToMany(mappedBy = "exercise")
     private List<Round> rounds;
-    
+
     @OneToMany(mappedBy = "exercise")
     private List<Media> medias;
 
@@ -93,8 +91,12 @@ public class Exercise implements Serializable {
     public Integer getTimeout() { return timeout; }
     public void setTimeout(Integer timeout) { this.timeout = timeout; }
 
-    public Workout getWorkout() { return workout; }
-    public void setWorkout(Workout workout) { this.workout = workout; }
+    public List<Workout> getWorkouts() {
+        return workouts;
+    }
+    public void setWorkouts(List<Workout> workouts) {
+        this.workouts = workouts;
+    }
 
     public List<Round> getRounds() { return rounds; }
     public void setRounds(List<Round> rounds) { this.rounds = rounds;}

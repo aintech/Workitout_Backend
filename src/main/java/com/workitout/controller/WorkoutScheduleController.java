@@ -5,7 +5,6 @@ import com.workitout.model.WorkoutRepository;
 import com.workitout.model.WorkoutSchedule;
 import com.workitout.model.WorkoutScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

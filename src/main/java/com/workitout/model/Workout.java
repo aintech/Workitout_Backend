@@ -1,7 +1,5 @@
 package com.workitout.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
@@ -9,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -28,8 +28,12 @@ public class Workout implements Serializable {
     
     @Column(name = "_name")
     private String name;
-    
-    @OneToMany(mappedBy = "workout")
+    @ManyToMany
+    @JoinTable(
+            name = "_workout_to_exercise",
+            joinColumns = @JoinColumn(name = "_workout_id"),
+            inverseJoinColumns = @JoinColumn(name = "_exercise_id")
+    )
     private List<Exercise> exercises;
 
 //    @OneToMany(mappedBy = "workout")
