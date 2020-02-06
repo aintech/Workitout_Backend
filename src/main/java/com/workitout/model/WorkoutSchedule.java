@@ -19,24 +19,24 @@ import javax.persistence.TemporalType;
  * @author Yaremchuk E.N. (aka Aintech)
  */
 @Entity
-@Table(name = "_workout_schedule")
+@Table
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class WorkoutSchedule implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private int id;
     
     @ManyToOne
-    @JoinColumn(name = "_workout_id")
+    @JoinColumn(name = "workout_id")
     private Workout workout;
     
     @Temporal(TemporalType.DATE)
-    @Column(name = "_date")
+    @Column
     private Date date;
     
-    @Column(name = "_performed")
+    @Column
     private boolean performed;
 
     @OneToMany(mappedBy = "workoutSchedule")

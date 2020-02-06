@@ -14,21 +14,21 @@ import javax.persistence.Table;
  * @author Aintech
  */
 @Entity
-@Table(name = "_workout_plan")
+@Table
 public class WorkoutPlan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private int id;
     
-    @Column(name = "_name")
+    @Column
     private String name;
     
-    @Column(name = "_index")
+    @Column
     private int index;
 
-    @Column(name = "_scheduled")
+    @Column
     private boolean scheduled;
     
     @OneToMany(mappedBy = "workoutPlan")

@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="785f1257-01ab-4525-8042-7cd9f86f9912" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workitout.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Workitout.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Round.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Workout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutToPlanBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutToPlanBinding.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1PxHEj4XUpGkNZgC5jRyX1lrndy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -134,8 +134,17 @@
       <workItem from="1568010171200" duration="3560000" />
       <workItem from="1568041319748" duration="2149000" />
       <workItem from="1568045848272" duration="2122000" />
-      <workItem from="1578579469197" duration="627000" />
+      <workItem from="1578579469197" duration="2104000" />
+      <workItem from="1580973831342" duration="3136000" />
     </task>
+    <task id="LOCAL-00001" summary="ManyToMany for Exercises and Workouts">
+      <created>1578581290436</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578581290436</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,26 +163,48 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="ManyToMany for Exercises and Workouts" />
+    <option name="LAST_COMMIT_MESSAGE" value="ManyToMany for Exercises and Workouts" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom" timestamp="1578580192791">
+    <state x="908" y="394" width="800" height="677" key="#Assign_Data_Sources" timestamp="1580997898094">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1578580192791" />
-    <state width="2447" height="364" key="GridCell.Tab.0.center" timestamp="1578580192791">
+    <state x="908" y="394" width="800" height="677" key="#Assign_Data_Sources/67.27.2493.1413@67.27.2493.1413" timestamp="1580997898094" />
+    <state x="878" y="326" width="860" height="979" key="CommitChangelistDialog2" timestamp="1578581290224">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1578580192791" />
-    <state width="2447" height="364" key="GridCell.Tab.0.left" timestamp="1578580192791">
+    <state x="878" y="326" width="860" height="979" key="CommitChangelistDialog2/67.27.2493.1413@67.27.2493.1413" timestamp="1578581290224" />
+    <state width="2447" height="364" key="GridCell.Tab.0.bottom" timestamp="1580998921108">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1578580192791" />
-    <state width="2447" height="364" key="GridCell.Tab.0.right" timestamp="1578580192791">
+    <state width="2447" height="364" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1580998921108" />
+    <state width="2447" height="364" key="GridCell.Tab.0.center" timestamp="1580998921107">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1578580192791" />
-    <state x="1081" y="652" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578579603391">
+    <state width="2447" height="364" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1580998921107" />
+    <state width="2447" height="364" key="GridCell.Tab.0.left" timestamp="1580998921107">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state x="1081" y="652" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.2493.1413@67.27.2493.1413" timestamp="1578579603391" />
+    <state width="2447" height="364" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1580998921107" />
+    <state width="2447" height="364" key="GridCell.Tab.0.right" timestamp="1580998921107">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state width="2447" height="364" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1580998921107" />
+    <state x="836" y="338" width="944" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580997905872">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="836" y="338" width="944" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.2493.1413@67.27.2493.1413" timestamp="1580997905872" />
+    <state x="1081" y="652" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580973843480">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="1081" y="652" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.2493.1413@67.27.2493.1413" timestamp="1580973843480" />
+    <state x="958" y="463" width="710" height="538" key="find.popup" timestamp="1580997911804">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="958" y="463" width="710" height="538" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1580997911804" />
   </component>
 </project>

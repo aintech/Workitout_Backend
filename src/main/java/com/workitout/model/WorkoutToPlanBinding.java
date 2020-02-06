@@ -16,25 +16,25 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "_workout_to_plan_binding")
+@Table
 public class WorkoutToPlanBinding {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private int id;
     
-    @Column(name = "_index")
+    @Column
     private int index;
     
 //    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "_workout_id")
+    @JoinColumn(name = "workout_id")
     private Workout workout;
     
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "_workout_plan_id")
+    @JoinColumn(name = "workout_plan_id")
     private WorkoutPlan workoutPlan;
 
     public int getId() { return id; }

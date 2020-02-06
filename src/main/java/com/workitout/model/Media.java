@@ -17,30 +17,30 @@ import javax.persistence.Table;
  * @author Aintech
  */
 @Entity
-@Table(name = "_media")
+@Table
 public class Media implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private int id;
     
-    @Column(name = "_index")
+    @Column
     private int index;
     
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "_exercise_id")
+    @JoinColumn(name = "exercise_id")
     private Exercise exercise;
     
-    @Column(name = "_name")
+    @Column
     private String name;
     
-    @Column(name = "_url")
+    @Column
     private String url;
     
     @JsonDeserialize(converter = ByteDeserializeConventer.class)
-    @Column(name = "_source")
+    @Column
     private byte[] source;
     
     public int getId() { return id; }

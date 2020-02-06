@@ -17,22 +17,22 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "_workout")
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@Table
 public class Workout implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private Integer id;
     
-    @Column(name = "_name")
+    @Column
     private String name;
+
     @ManyToMany
     @JoinTable(
-            name = "_workout_to_exercise",
-            joinColumns = @JoinColumn(name = "_workout_id"),
-            inverseJoinColumns = @JoinColumn(name = "_exercise_id")
+            name = "workout_to_exercise",
+            joinColumns = @JoinColumn(name = "workout_id"),
+            inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
     private List<Exercise> exercises;
 

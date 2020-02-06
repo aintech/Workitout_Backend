@@ -16,26 +16,26 @@ import javax.persistence.Table;
  * @author Aintech
  */
 @Entity
-@Table(name = "_round")
+@Table
 public class Round implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private Integer id;
     
-    @Column(name = "_index")
+    @Column
     private Integer index;
     
-    @Column(name = "_repeat")
+    @Column
     private Integer repeat;
     
-    @Column(name = "_timeout")
+    @Column
     private Integer timeout;
 
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "_exercise_id")
+    @JoinColumn(name = "exercise_id")
     private Exercise exercise;
     
     public Integer getId() {

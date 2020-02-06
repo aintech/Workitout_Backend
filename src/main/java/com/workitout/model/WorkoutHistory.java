@@ -17,29 +17,29 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "_workout_history")
+@Table
 public class WorkoutHistory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private int id;
     
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "_workout_schedule_id")
+    @JoinColumn(name = "workout_schedule_id")
     private WorkoutSchedule workoutSchedule;
     
-    @Column(name = "_name")
+    @Column
     private String name;
     
-    @Column(name = "_index")
+    @Column
     private int index;
     
-    @Column(name = "_weight")
+    @Column
     private int weight;
     
-    @Column(name = "_repeats_done")
+    @Column
     private String repeats;
 
     public int getId() { return id; }

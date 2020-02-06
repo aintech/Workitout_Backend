@@ -21,40 +21,40 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "_exercise")
+@Table
 public class Exercise implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "_id")
+    @Column
     private Integer id;
     
-    @Column(name = "_index")
+    @Column
     private Integer index;
     
-    @Column(name = "_name")
+    @Column
     private String name;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "_type")
+    @Column
     private ExerciseType type;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = MuscleGroup.class)
-    @Column(name = "_muscle_groups")
+    @Column
     private List<MuscleGroup> muscleGroups;
 
-    @Column(name = "_external_link")
+    @Column
     private String externalLink;
     
-    @Column(name = "_instruction")
+    @Column
     private String instruction;
-    
-    //Weight int gramms
-    @Column(name = "_weight")
+
+    /** Weight int gramms */
+    @Column
     private int weight;
     
-    @Column(name = "_timeout")
+    @Column
     private Integer timeout;
     
     @JsonIgnore
