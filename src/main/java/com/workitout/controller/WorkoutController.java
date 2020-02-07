@@ -1,14 +1,14 @@
 package com.workitout.controller;
 
-import com.workitout.model.ExerciseRepository;
-import com.workitout.model.MediaRepository;
-import com.workitout.model.RoundRepository;
+import com.workitout.repository.ExerciseRepository;
+import com.workitout.repository.MediaRepository;
+import com.workitout.repository.RoundRepository;
 import com.workitout.model.Workout;
-import com.workitout.model.WorkoutRepository;
+import com.workitout.repository.WorkoutRepository;
 import com.workitout.model.WorkoutSchedule;
-import com.workitout.model.WorkoutScheduleRepository;
+import com.workitout.repository.WorkoutScheduleRepository;
 import com.workitout.model.WorkoutToPlanBinding;
-import com.workitout.model.WorkoutToPlanBindingRepository;
+import com.workitout.repository.WorkoutToPlanBindingRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

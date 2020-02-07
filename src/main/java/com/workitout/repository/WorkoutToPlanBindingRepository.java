@@ -1,5 +1,6 @@
-package com.workitout.model;
+package com.workitout.repository;
 
+import com.workitout.model.WorkoutToPlanBinding;
 import org.springframework.data.repository.CrudRepository;
 
 

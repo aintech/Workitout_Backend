@@ -1,8 +1,8 @@
 package com.workitout.controller;
 
-import com.workitout.model.ExerciseRepository;
+import com.workitout.repository.ExerciseRepository;
 import com.workitout.model.Round;
-import com.workitout.model.RoundRepository;
+import com.workitout.repository.RoundRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,9 +1,9 @@
 package com.workitout.controller;
 
 import com.workitout.model.WorkoutHistory;
-import com.workitout.model.WorkoutHistoryRepository;
+import com.workitout.repository.WorkoutHistoryRepository;
 import com.workitout.model.WorkoutSchedule;
-import com.workitout.model.WorkoutScheduleRepository;
+import com.workitout.repository.WorkoutScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

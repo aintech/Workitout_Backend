@@ -1,9 +1,9 @@
 package com.workitout.controller;
 
 import com.workitout.model.WorkoutPlan;
-import com.workitout.model.WorkoutPlanRepository;
+import com.workitout.repository.WorkoutPlanRepository;
 import com.workitout.model.WorkoutToPlanBinding;
-import com.workitout.model.WorkoutToPlanBindingRepository;
+import com.workitout.repository.WorkoutToPlanBindingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

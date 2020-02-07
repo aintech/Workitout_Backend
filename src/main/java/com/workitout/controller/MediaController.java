@@ -1,9 +1,9 @@
 package com.workitout.controller;
 
 import com.workitout.model.Exercise;
-import com.workitout.model.ExerciseRepository;
+import com.workitout.repository.ExerciseRepository;
 import com.workitout.model.Media;
-import com.workitout.model.MediaRepository;
+import com.workitout.repository.MediaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
