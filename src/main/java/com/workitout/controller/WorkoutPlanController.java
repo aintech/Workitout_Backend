@@ -1,9 +1,7 @@
 package com.workitout.controller;
 
 import com.workitout.model.WorkoutPlan;
-import com.workitout.repository.WorkoutPlanRepository;
-import com.workitout.model.WorkoutToPlanBinding;
-import com.workitout.repository.WorkoutToPlanBindingRepository;
+import com.workitout.service.WorkoutPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,44 +18,34 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "/back/workoutplans")
+@RequestMapping(value = "/back/workout-plan")
 public class WorkoutPlanController {
 
     @Autowired
-    private WorkoutPlanRepository repo;
-    
-    @Autowired
-    private WorkoutToPlanBindingRepository bindingRepo;
-    
-    @GetMapping
-    public Iterable<WorkoutPlan> getAll () {
-        return repo.findAll();
-    }
-    
+    WorkoutPlanService workoutPlanService;
+
     @GetMapping(value = "/{id}")
     public WorkoutPlan get (@PathVariable Integer id) {
-        return repo.findById(id).get();
+        return workoutPlanService.get(id);
     }
     
     @PostMapping
     public WorkoutPlan save (@RequestBody WorkoutPlan workoutPlan) {
-        return repo.save(workoutPlan);
+        return workoutPlanService.save(workoutPlan);
     }
     
     @PutMapping
     public WorkoutPlan update(@RequestBody WorkoutPlan workoutPlan) {
-        WorkoutPlan plan = repo.findById(workoutPlan.getId()).get();
-        plan.setIndex(workoutPlan.getIndex());
-        plan.setName(workoutPlan.getName());
-        plan.setScheduled(workoutPlan.isScheduled());
-        return repo.save(plan);
+        return workoutPlanService.update(workoutPlan);
     }
     
     @DeleteMapping(value = "/{id}")
-    public String delete (@PathVariable Integer id) {
-        Iterable<WorkoutToPlanBinding> bindings = bindingRepo.getByWorkoutPlanId(id);
-        bindingRepo.deleteAll(bindings);
-        repo.deleteById(id);
-        return "";
+    public void delete (@PathVariable Integer id) {
+        workoutPlanService.delete(id);
+    }
+
+    @GetMapping
+    public Iterable<WorkoutPlan> getAll () {
+        return workoutPlanService.getAll();
     }
 }

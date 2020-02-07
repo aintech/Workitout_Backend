@@ -2,24 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="785f1257-01ab-4525-8042-7cd9f86f9912" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/EnumerationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/ExerciseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/MediaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/RoundService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanToBindingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutScheduleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/MediaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/MediaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/RoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/RoundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkouHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkouHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkouHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanToBindingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanToBindingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/ExerciseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/ExerciseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/MediaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/MediaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/RoundRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/RoundRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutHistoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutPlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutPlanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutScheduleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutScheduleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutToPlanBindingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutToPlanBindingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -147,7 +150,7 @@
       <workItem from="1580973831342" duration="3254000" />
       <workItem from="1580999561191" duration="1103000" />
       <workItem from="1581004491025" duration="139000" />
-      <workItem from="1581065437105" duration="1270000" />
+      <workItem from="1581065437105" duration="7595000" />
     </task>
     <task id="LOCAL-00001" summary="ManyToMany for Exercises and Workouts">
       <created>1578581290436</created>
@@ -202,22 +205,22 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="1096" y="490" width="424" height="484" key="FileChooserDialogImpl/67.27.2493.1413@67.27.2493.1413" timestamp="1580999670864" />
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom" timestamp="1581004629528">
+    <state width="2447" height="364" key="GridCell.Tab.0.bottom" timestamp="1581082254579">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1581004629528" />
-    <state width="2447" height="364" key="GridCell.Tab.0.center" timestamp="1581004629526">
+    <state width="2447" height="364" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1581082254579" />
+    <state width="2447" height="364" key="GridCell.Tab.0.center" timestamp="1581082254579">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1581004629526" />
-    <state width="2447" height="364" key="GridCell.Tab.0.left" timestamp="1581004629525">
+    <state width="2447" height="364" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1581082254579" />
+    <state width="2447" height="364" key="GridCell.Tab.0.left" timestamp="1581082254578">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1581004629525" />
-    <state width="2447" height="364" key="GridCell.Tab.0.right" timestamp="1581004629527">
+    <state width="2447" height="364" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1581082254578" />
+    <state width="2447" height="364" key="GridCell.Tab.0.right" timestamp="1581082254579">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1581004629527" />
+    <state width="2447" height="364" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1581082254579" />
     <state x="836" y="338" width="944" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580997905872">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>

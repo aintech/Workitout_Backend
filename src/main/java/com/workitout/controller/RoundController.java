@@ -1,8 +1,7 @@
 package com.workitout.controller;
 
-import com.workitout.repository.ExerciseRepository;
 import com.workitout.model.Round;
-import com.workitout.repository.RoundRepository;
+import com.workitout.service.RoundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,37 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/back/rounds")
+@RequestMapping("/back/round")
 public class RoundController {
-    
+
     @Autowired
-    private RoundRepository repo;
-    
-    @Autowired
-    private ExerciseRepository exerRepo;
-    
+    private RoundService roundService;
+
     @PostMapping(value = "/{exerciseId}")
     public Round save (@PathVariable Integer exerciseId, @RequestBody Round round) {
-        round.setExercise(exerRepo.findById(exerciseId).get());
-        return repo.save(round);
+        return roundService.save(exerciseId, round);
     }
     
     @PutMapping(value = "/{id}")
     public Round update (@PathVariable Integer id, @RequestBody Round round) {
-        Round rnd = repo.findById(id).get();
-        rnd.setIndex(round.getIndex());
-        rnd.setRepeat(round.getRepeat());
-        rnd.setTimeout(round.getTimeout());
-        return repo.save(rnd);
+        return roundService.update(id, round);
     }
     
     @DeleteMapping(value = "/{id}")
-    public String delete (@PathVariable Integer id) {
-        repo.deleteById(id);
-        return "";
-    }
-    
-    public void delete (Round round) {
-        repo.delete(round);
+    public void delete (@PathVariable Integer id) {
+        roundService.delete(id);
     }
 }

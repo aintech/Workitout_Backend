@@ -50,7 +50,7 @@ public class Exercise implements Serializable {
     @Column
     private String instruction;
 
-    /** Weight int gramms */
+    /** Weight in gramms */
     @Column
     private int weight;
     

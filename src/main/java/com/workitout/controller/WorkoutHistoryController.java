@@ -1,10 +1,9 @@
 package com.workitout.controller;
 
 import com.workitout.model.WorkoutHistory;
-import com.workitout.repository.WorkoutHistoryRepository;
-import com.workitout.model.WorkoutSchedule;
-import com.workitout.repository.WorkoutScheduleRepository;
+import com.workitout.service.WorkoutHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,23 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Aintech
  */
 @RestController
-@RequestMapping(value = "/back/workouthistories")
-public class WorkouHistoryController {
+@RequestMapping(value = "/back/workout-history")
+public class WorkoutHistoryController {
 
     @Autowired
-    private WorkoutHistoryRepository repo;
-    
-    @Autowired
-    private WorkoutScheduleRepository scheduleRepo;
-    
+    private WorkoutHistoryService workoutHistoryService;
+
     @PostMapping(value = "/{workoutScheduleId}")
     public WorkoutHistory save (@PathVariable Integer workoutScheduleId, @RequestBody WorkoutHistory history) {
-        WorkoutSchedule schedule = scheduleRepo.findById(workoutScheduleId).get();
-        history.setWorkoutSchedule(schedule);
-        return repo.save(history);
+        return workoutHistoryService.save(workoutScheduleId, history);
     }
-    
-    public void delete (WorkoutHistory history) {
-        repo.delete(history);
+
+    @GetMapping(value = "/{id}")
+    public WorkoutHistory get(@PathVariable Integer id) {
+        return workoutHistoryService.get(id);
+    }
+
+    @GetMapping
+    public Iterable<WorkoutHistory> getAll() {
+        return workoutHistoryService.getAll();
     }
 }

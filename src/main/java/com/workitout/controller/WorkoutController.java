@@ -1,15 +1,7 @@
 package com.workitout.controller;
 
-import com.workitout.repository.ExerciseRepository;
-import com.workitout.repository.MediaRepository;
-import com.workitout.repository.RoundRepository;
 import com.workitout.model.Workout;
-import com.workitout.repository.WorkoutRepository;
-import com.workitout.model.WorkoutSchedule;
-import com.workitout.repository.WorkoutScheduleRepository;
-import com.workitout.model.WorkoutToPlanBinding;
-import com.workitout.repository.WorkoutToPlanBindingRepository;
-import java.util.List;
+import com.workitout.service.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,64 +17,34 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "/back/workouts")
+@RequestMapping(value = "/back/workout")
 public class WorkoutController {
-    
+
     @Autowired
-    private WorkoutRepository repo;
-    
-    @Autowired
-    private WorkoutScheduleRepository scheduleRepo;
-    
-    @Autowired
-    private ExerciseRepository exerRepo;
-    
-    @Autowired
-    private RoundRepository roundRepo;
-    
-    @Autowired
-    private MediaRepository mediaRepo;
-    
-    @Autowired
-    private WorkoutToPlanBindingRepository bindingRepo;
-    
-    @GetMapping
-    public Iterable<Workout> getAll () {
-        return repo.findAll();
-    }
-    
-    @GetMapping(value = "/{id}")
-    public Workout get (@PathVariable Integer id) {
-        return repo.findById(id).get();
-    }
-    
+    private WorkoutService workoutService;
+
     @PostMapping
     public Workout save (@RequestBody Workout workout) {
-        repo.save(workout);
-        return workout;
+        return workoutService.save(workout);
     }
-    
+
+    @GetMapping(value = "/{id}")
+    public Workout get (@PathVariable Integer id) {
+        return workoutService.get(id);
+    }
+
     @PutMapping(value = "/{id}")
     public Workout update (@PathVariable Integer id, @RequestBody Workout workout) {
-        Workout work = repo.findById(id).get();
-        work.setName(workout.getName());
-        repo.save(work);
-        return work;
+        return workoutService.update(id, workout);
     }
     
     @DeleteMapping(value = "/{id}")
-    public String delete (@PathVariable Integer id) {
-        Workout workout = repo.findById(id).get();
-        List<WorkoutSchedule> schedules = scheduleRepo.getByWorkoutId(id);
-        scheduleRepo.deleteAll(schedules);
-        Iterable<WorkoutToPlanBinding> bindings = bindingRepo.getByWorkoutId(id);
-        bindingRepo.deleteAll(bindings);
-        workout.getExercises().forEach(exercise -> {
-            exercise.getRounds().forEach(round -> roundRepo.delete(round));
-            exercise.getMedias().forEach(media -> mediaRepo.delete(media));
-            exerRepo.delete(exercise);
-        });
-        repo.delete(workout);
-        return "";
+    public void delete (@PathVariable Integer id) {
+        workoutService.delete(id);
+    }
+
+    @GetMapping
+    public Iterable<Workout> getAll () {
+        return workoutService.getAll();
     }
 }
