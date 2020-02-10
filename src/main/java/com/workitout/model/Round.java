@@ -1,8 +1,10 @@
 package com.workitout.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,61 +22,37 @@ import javax.persistence.Table;
 public class Round implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Integer id;
-    
-    @Column
+
+    @Getter
+    @Setter
     private Integer index;
-    
-    @Column
+
+    @Getter
+    @Setter
     private Integer repeat;
-    
-    @Column
+
+    @Getter
+    @Setter
     private Integer timeout;
 
     @JsonIgnore
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "exercise_id")
+    @Getter
+    @Setter
     private Exercise exercise;
-    
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getIndex() {
-        return index;
-    }
-
-    public void setIndex(Integer index) {
-        this.index = index;
-    }
-
-    public Integer getRepeat() {
-        return repeat;
-    }
-
-    public void setRepeat(Integer repeat) {
-        this.repeat = repeat;
-    }
-
-    public Integer getTimeout() {
-        return timeout;
-    }
-
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
-    }
-
-    public Exercise getExercise() {
-        return exercise;
-    }
-
-    public void setExercise(Exercise exercise) {
+    public void withExercise(Exercise exercise) {
         this.exercise = exercise;
-    }   
+    }
+
+    public void updateBy(Round round) {
+        index = round.index;
+        repeat = round.repeat;
+        timeout = round.timeout;
+    }
 }

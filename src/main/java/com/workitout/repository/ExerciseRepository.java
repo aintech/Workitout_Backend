@@ -7,4 +7,4 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Aintech
  */
-public interface ExerciseRepository extends CrudRepository<Exercise, Integer> {}
+public interface ExerciseRepository extends CrudRepository<Exercise, Long> {}

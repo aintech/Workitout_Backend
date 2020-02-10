@@ -37,18 +37,17 @@ public class WorkoutService {
         return repo.save(workout);
     }
 
-    public Workout get (Integer id) {
+    public Workout get (Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find workout with ID " + id));
     }
 
-    public Workout update (Integer id, Workout workout) {
+    public Workout update (Long id, Workout workout) {
         Workout work = get(id);
-        work.setName(workout.getName());
-        repo.save(work);
-        return work;
+        work.updateBy(workout);
+        return repo.save(work);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         Workout workout = get(id);
         List<WorkoutSchedule> schedules = scheduleRepo.getByWorkoutId(id);
         scheduleRepo.deleteAll(schedules);

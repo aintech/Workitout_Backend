@@ -1,9 +1,11 @@
 package com.workitout.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,36 +26,36 @@ import javax.persistence.TemporalType;
 public class WorkoutSchedule implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private int id;
     
     @ManyToOne
     @JoinColumn(name = "workout_id")
+    @Getter
+    @Setter
     private Workout workout;
     
     @Temporal(TemporalType.DATE)
-    @Column
+    @Getter
+    @Setter
     private Date date;
-    
-    @Column
+
+    @Getter
+    @Setter
     private boolean performed;
 
     @OneToMany(mappedBy = "workoutSchedule")
+    @Getter
+    @Setter
     private List<WorkoutHistory> workoutHistories;
-    
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
-    public Workout getWorkout() { return workout; }
-    public void setWorkout(Workout workout) { this.workout = workout; }
+    public void withWorkout(Workout workout) {
+        this.workout = workout;
+    }
 
-    public Date getDate() { return date; }
-    public void setDate(Date date) { this.date = date; }
-
-    public boolean isPerformed() { return performed; }
-    public void setPerformed(boolean performed) { this.performed = performed; }
-
-    public List<WorkoutHistory> getWorkoutHistories() { return workoutHistories; }
-    public void setWorkoutHistories(List<WorkoutHistory> workoutHistories) { this.workoutHistories = workoutHistories; }
+    public void updateBy(WorkoutSchedule workoutSchedule) {
+        performed = workoutSchedule.performed;
+    }
 }

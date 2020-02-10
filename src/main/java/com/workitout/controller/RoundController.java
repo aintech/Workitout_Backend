@@ -23,17 +23,17 @@ public class RoundController {
     private RoundService roundService;
 
     @PostMapping(value = "/{exerciseId}")
-    public Round save (@PathVariable Integer exerciseId, @RequestBody Round round) {
+    public Round save (@PathVariable Long exerciseId, @RequestBody Round round) {
         return roundService.save(exerciseId, round);
     }
     
     @PutMapping(value = "/{id}")
-    public Round update (@PathVariable Integer id, @RequestBody Round round) {
+    public Round update (@PathVariable Long id, @RequestBody Round round) {
         return roundService.update(id, round);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         roundService.delete(id);
     }
 }

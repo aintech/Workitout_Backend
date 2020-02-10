@@ -2,8 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="785f1257-01ab-4525-8042-7cd9f86f9912" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/security/UserAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/security/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/security/UserAuthRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/security/UserRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/security/UserAuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workitout.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Workitout.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/ExerciseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/MediaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/MediaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/RoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/RoundController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanToBindingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutPlanToBindingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/controller/WorkoutScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/ByteDeserializeConventer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/util/ByteDeserializeConventer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/EntityIdResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/util/EntityIdResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/Workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/Workout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutToPlanBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/model/WorkoutToPlanBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/ExerciseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/ExerciseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/MediaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/MediaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/RoundRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/RoundRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutHistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutPlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutPlanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutScheduleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutScheduleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutToPlanBindingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/repository/WorkoutToPlanBindingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/ExerciseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/ExerciseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/MediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/MediaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/RoundService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanToBindingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutPlanToBindingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/workitout/service/WorkoutService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +66,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -136,7 +184,8 @@
       <workItem from="1580973831342" duration="3254000" />
       <workItem from="1580999561191" duration="1103000" />
       <workItem from="1581004491025" duration="139000" />
-      <workItem from="1581065437105" duration="8505000" />
+      <workItem from="1581065437105" duration="9407000" />
+      <workItem from="1581333272914" duration="10599000" />
     </task>
     <task id="LOCAL-00001" summary="ManyToMany for Exercises and Workouts">
       <created>1578581290436</created>
@@ -187,6 +236,19 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="494" y="394" width="1769" height="677" key="#Project_Structure/67.27.2493.1413@67.27.2493.1413" timestamp="1581083704512" />
+    <state x="654" y="357" width="669" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581340692900">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="654" y="357" width="669" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1581340692900" />
+    <state x="1121" y="445" width="343" height="429" key="#com.intellij.ide.util.MemberChooser" timestamp="1581345778679">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="850" y="339" width="343" height="429" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1581341201364" />
+    <state x="1121" y="445" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.2493.1413@67.27.2493.1413" timestamp="1581345778679" />
+    <state x="980" y="27" width="646" height="1413" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581339434434">
+      <screen x="67" y="27" width="2493" height="1413" />
+    </state>
+    <state x="980" y="27" width="646" height="1413" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1581339434434" />
     <state x="210" y="326" width="2208" height="979" key="CommitChangelistDialog2" timestamp="1580999469145">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
@@ -195,22 +257,26 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="1096" y="490" width="424" height="484" key="FileChooserDialogImpl/67.27.2493.1413@67.27.2493.1413" timestamp="1580999670864" />
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom" timestamp="1581084123638">
+    <state width="2447" height="232" key="GridCell.Tab.0.bottom" timestamp="1581346314124">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1581084123638" />
-    <state width="2447" height="364" key="GridCell.Tab.0.center" timestamp="1581084123638">
+    <state width="1807" height="160" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1581341043440" />
+    <state width="2447" height="232" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1581346314124" />
+    <state width="2447" height="232" key="GridCell.Tab.0.center" timestamp="1581346314124">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1581084123638" />
-    <state width="2447" height="364" key="GridCell.Tab.0.left" timestamp="1581084123638">
+    <state width="1807" height="160" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1581341043440" />
+    <state width="2447" height="232" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1581346314124" />
+    <state width="2447" height="232" key="GridCell.Tab.0.left" timestamp="1581346314123">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1581084123638" />
-    <state width="2447" height="364" key="GridCell.Tab.0.right" timestamp="1581084123638">
+    <state width="1807" height="160" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1581341043439" />
+    <state width="2447" height="232" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1581346314123" />
+    <state width="2447" height="232" key="GridCell.Tab.0.right" timestamp="1581346314124">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state width="2447" height="364" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1581084123638" />
+    <state width="1807" height="160" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1581341043440" />
+    <state width="2447" height="232" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1581346314124" />
     <state x="702" y="310" width="1024" height="845" key="SettingsEditor" timestamp="1581083910655">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
@@ -223,9 +289,9 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="1081" y="652" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.2493.1413@67.27.2493.1413" timestamp="1580973843480" />
-    <state x="958" y="463" width="710" height="538" key="find.popup" timestamp="1580997911804">
+    <state x="958" y="463" width="869" height="606" key="find.popup" timestamp="1581339076165">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
-    <state x="958" y="463" width="710" height="538" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1580997911804" />
+    <state x="958" y="463" width="869" height="606" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1581339076165" />
   </component>
 </project>

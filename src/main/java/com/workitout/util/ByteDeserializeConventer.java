@@ -1,4 +1,4 @@
-package com.workitout.model;
+package com.workitout.util;
 
 import com.fasterxml.jackson.databind.util.StdConverter;    
 import java.util.LinkedHashMap;

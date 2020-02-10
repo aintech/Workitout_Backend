@@ -1,9 +1,11 @@
 package com.workitout.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,92 +27,76 @@ import javax.persistence.Table;
 public class Exercise implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private Integer id;
-    
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
+    private Long id;
+
+    @Getter
+    @Setter
     private Integer index;
-    
-    @Column
+
+    @Getter
+    @Setter
     private String name;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Getter
+    @Setter
     private ExerciseType type;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = MuscleGroup.class)
-    @Column
+    @Getter
+    @Setter
     private List<MuscleGroup> muscleGroups;
 
-    @Column
+    @Getter
+    @Setter
     private String externalLink;
-    
-    @Column
+
+    @Getter
+    @Setter
     private String instruction;
 
     /** Weight in gramms */
-    @Column
-    private int weight;
-    
-    @Column
-    private Integer timeout;
+    @Getter
+    @Setter
+    private Long weight;
+
+    @Getter
+    @Setter
+    private Long timeout;
     
     @JsonIgnore
     @ManyToMany(mappedBy = "exercises")
+    @Getter
+    @Setter
     private List<Workout> workouts;
     
     @OneToMany(mappedBy = "exercise")
+    @Setter
     private List<Round> rounds;
 
     @OneToMany(mappedBy = "exercise")
+    @Setter
     private List<Media> medias;
 
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
-
-    public Integer getIndex() { return index; }
-    public void setIndex(Integer index) { this.index = index; }
-    
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public ExerciseType getType() { return type; }
-    public void setType(ExerciseType type) { this.type = type; }
-
-    public String getExternalLink() { return externalLink; }
-    public void setExternalLink(String externalLink) { this.externalLink = externalLink; }
-
-    public String getInstruction() { return instruction; }
-    public void setInstruction(String instruction) { this.instruction = instruction; }
-
-    public int getWeight() { return weight; }
-    public void setWeight(int weight) { this.weight = weight; }
-    
-    public Integer getTimeout() { return timeout; }
-    public void setTimeout(Integer timeout) { this.timeout = timeout; }
-
-    public List<Workout> getWorkouts() {
-        return workouts;
-    }
-    public void setWorkouts(List<Workout> workouts) {
-        this.workouts = workouts;
+    public List<Round> getRounds() {
+        return rounds;
     }
 
-    public List<Round> getRounds() { return rounds; }
-    public void setRounds(List<Round> rounds) { this.rounds = rounds;}
-
-    public List<Media> getMedias() { return medias; }
-    public void setMedias(List<Media> medias) { this.medias = medias; }
+    public List<Media> getMedias() {
+        return medias;
+    }
 
     public void updateBy(Exercise exercise) {
-        setIndex(exercise.getIndex());
-        setInstruction(exercise.getInstruction());
-        setName(exercise.getName());
-        setExternalLink(exercise.getExternalLink());
-        setTimeout(exercise.getTimeout());
-        setWeight(exercise.getWeight());
-        setType(exercise.getType());
+        index = exercise.index;
+        instruction = exercise.instruction;
+        name = exercise.name;
+        externalLink = exercise.externalLink;
+        timeout = exercise.timeout;
+        weight = exercise.weight;
+        type = exercise.type;
     }
 }

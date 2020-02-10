@@ -1,4 +1,4 @@
-package com.workitout.model;
+package com.workitout.util;
 
 import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdResolver;

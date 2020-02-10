@@ -23,12 +23,12 @@ public class WorkoutPlanToBindingController {
     WorkoutPlanToBindingService workoutPlanToBindingService;
 
     @PostMapping(value = "/{workoutPlanId}")
-    public WorkoutToPlanBinding save (@PathVariable Integer workoutPlanId, @RequestBody WorkoutToPlanBinding binding) {
+    public WorkoutToPlanBinding save (@PathVariable Long workoutPlanId, @RequestBody WorkoutToPlanBinding binding) {
         return workoutPlanToBindingService.save(workoutPlanId, binding);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         workoutPlanToBindingService.delete(id);
     }
 }

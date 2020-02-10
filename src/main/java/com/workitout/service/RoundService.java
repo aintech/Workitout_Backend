@@ -12,24 +12,22 @@ public class RoundService {
     @Autowired
     private ExerciseService exerciseService;
 
-    public Round save (Integer exerciseId, Round round) {
-        round.setExercise(exerciseService.get(exerciseId));
+    public Round save (Long exerciseId, Round round) {
+        round.withExercise(exerciseService.get(exerciseId));
         return repo.save(round);
     }
 
-    public Round get(Integer id) {
+    public Round get(Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find round with ID " + id));
     }
 
-    public Round update (Integer id, Round round) {
+    public Round update (Long id, Round round) {
         Round rnd = get(id);
-        rnd.setIndex(round.getIndex());
-        rnd.setRepeat(round.getRepeat());
-        rnd.setTimeout(round.getTimeout());
+        rnd.updateBy(round);
         return repo.save(rnd);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         repo.deleteById(id);
     }
 }

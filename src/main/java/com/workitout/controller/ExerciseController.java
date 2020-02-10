@@ -30,17 +30,17 @@ public class ExerciseController {
     }
 
     @GetMapping("/{id}")
-    public Exercise get (@PathVariable Integer id) {
+    public Exercise get (@PathVariable Long id) {
         return exerciseService.get(id);
     }
 
     @PutMapping(value = "/{id}")
-    public Exercise update (@PathVariable Integer id, @RequestBody Exercise exercise) {
+    public Exercise update (@PathVariable Long id, @RequestBody Exercise exercise) {
         return exerciseService.update(id, exercise);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         exerciseService.delete(id);
     }
 

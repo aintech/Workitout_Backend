@@ -8,9 +8,9 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Aintech
  */
-public interface WorkoutToPlanBindingRepository extends CrudRepository<WorkoutToPlanBinding, Integer> {
+public interface WorkoutToPlanBindingRepository extends CrudRepository<WorkoutToPlanBinding, Long> {
     
-    public Iterable<WorkoutToPlanBinding> getByWorkoutPlanId (Integer workoutPlanId);
+    Iterable<WorkoutToPlanBinding> getByWorkoutPlanId (Long workoutPlanId);
     
-    public Iterable<WorkoutToPlanBinding> getByWorkoutId (Integer workoutId);
+    Iterable<WorkoutToPlanBinding> getByWorkoutId (Long workoutId);
 }

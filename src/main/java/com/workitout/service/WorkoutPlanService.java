@@ -18,19 +18,17 @@ public class WorkoutPlanService {
         return repo.save(workoutPlan);
     }
 
-    public WorkoutPlan get (Integer id) {
+    public WorkoutPlan get (Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find plan with ID " + id));
     }
 
-    public WorkoutPlan update(WorkoutPlan workoutPlan) {
-        WorkoutPlan plan = get(workoutPlan.getId());
-        plan.setIndex(workoutPlan.getIndex());
-        plan.setName(workoutPlan.getName());
-        plan.setScheduled(workoutPlan.isScheduled());
+    public WorkoutPlan update(Long id, WorkoutPlan workoutPlan) {
+        WorkoutPlan plan = get(id);
+        plan.updateBy(workoutPlan);
         return repo.save(plan);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         Iterable<WorkoutToPlanBinding> bindings = bindingRepo.getByWorkoutPlanId(id);
         bindingRepo.deleteAll(bindings);
         repo.deleteById(id);

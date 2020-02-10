@@ -2,8 +2,11 @@ package com.workitout.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.workitout.util.ByteDeserializeConventer;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,43 +24,42 @@ import javax.persistence.Table;
 public class Media implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private int id;
-    
-    @Column
+
+    @Getter
+    @Setter
     private int index;
     
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "exercise_id")
+    @Getter
+    @Setter
     private Exercise exercise;
     
-    @Column
+    @Getter
+    @Setter
     private String name;
-    
-    @Column
+
+    @Getter
+    @Setter
     private String url;
     
     @JsonDeserialize(converter = ByteDeserializeConventer.class)
-    @Column
+    @Getter
+    @Setter
     private byte[] source;
-    
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
-    public int getIndex() { return index; }
-    public void setIndex(int index) { this.index = index; }
+    public void withExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
 
-    public Exercise getExercise() { return exercise; }
-    public void setExercise(Exercise exercise) { this.exercise = exercise; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getUrl() { return url; }
-    public void setUrl(String url) { this.url = url; }
-
-    public byte[] getSource() { return source; }
-    public void setSource(byte[] source) { this.source = source; }
+    public void updateBy(Media media) {
+        index = media.index;
+        source = media.source;
+        url = media.url;
+    }
 }

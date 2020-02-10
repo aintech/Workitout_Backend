@@ -1,8 +1,10 @@
 package com.workitout.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +23,13 @@ import javax.persistence.Table;
 public class Workout implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Integer id;
-    
-    @Column
+
+    @Getter
+    @Setter
     private String name;
 
     @ManyToMany
@@ -34,20 +38,16 @@ public class Workout implements Serializable {
             joinColumns = @JoinColumn(name = "workout_id"),
             inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
+    @Setter
     private List<Exercise> exercises;
 
+    public void updateBy(Workout workout) {
+        name = workout.name;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
+    }
 //    @OneToMany(mappedBy = "workout")
 //    private List<WorkoutSchedule> workoutSchedulers;
-    
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    
-    public List<Exercise> getExercises() { return exercises; }
-    public void setExercises(List<Exercise> exercises) { this.exercises = exercises; }
-    
-//    public List<WorkoutSchedule> getWorkoutSchedulers() { return workoutSchedulers; }
-//    public void setWorkoutSchedulers(List<WorkoutSchedule> workoutSchedulers) { this.workoutSchedulers = workoutSchedulers; }
 }

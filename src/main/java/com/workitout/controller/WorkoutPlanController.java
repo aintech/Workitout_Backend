@@ -25,7 +25,7 @@ public class WorkoutPlanController {
     WorkoutPlanService workoutPlanService;
 
     @GetMapping(value = "/{id}")
-    public WorkoutPlan get (@PathVariable Integer id) {
+    public WorkoutPlan get (@PathVariable Long id) {
         return workoutPlanService.get(id);
     }
     
@@ -34,13 +34,13 @@ public class WorkoutPlanController {
         return workoutPlanService.save(workoutPlan);
     }
     
-    @PutMapping
-    public WorkoutPlan update(@RequestBody WorkoutPlan workoutPlan) {
-        return workoutPlanService.update(workoutPlan);
+    @PutMapping(value = "/{id}")
+    public WorkoutPlan update(@PathVariable Long id, @RequestBody WorkoutPlan workoutPlan) {
+        return workoutPlanService.update(id, workoutPlan);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         workoutPlanService.delete(id);
     }
 

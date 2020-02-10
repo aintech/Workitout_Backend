@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * @author Yaremchuk E.N. (aka Aintech)
  */
-public interface WorkoutScheduleRepository extends CrudRepository<WorkoutSchedule, Integer> {
+public interface WorkoutScheduleRepository extends CrudRepository<WorkoutSchedule, Long> {
 
-    public List<WorkoutSchedule> getByWorkoutId (Integer workoutId);
+    List<WorkoutSchedule> getByWorkoutId (Long workoutId);
 }

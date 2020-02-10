@@ -21,17 +21,17 @@ public class ExerciseService {
         return repo.save(exercise);
     }
 
-    public Exercise get (Integer id) {
+    public Exercise get (Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find exercise with ID " + id));
     }
 
-    public Exercise update (Integer id, Exercise exercise) {
+    public Exercise update (Long id, Exercise exercise) {
         Exercise persisted = get(id);
         persisted.updateBy(exercise);
         return repo.save(persisted);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         Exercise exercise = get(id);
         exercise.getRounds().forEach(round -> { roundRepo.delete(round); });
         exercise.getMedias().forEach(media -> { mediaRepo.delete(media); });

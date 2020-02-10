@@ -28,22 +28,22 @@ public class MediaController {
     private MediaService mediaService;
 
     @PostMapping(value = "/{exerciseId}")
-    public Media save (@PathVariable Integer exerciseId, @RequestBody Media media) {
+    public Media save (@PathVariable Long exerciseId, @RequestBody Media media) {
         return mediaService.save(exerciseId, media);
     }
     
     @GetMapping(value = "/{id}")
-    public Media get (@PathVariable Integer id) {
+    public Media get (@PathVariable Long id) {
         return mediaService.get(id);
     }
     
     @PutMapping(value = "/{id}")
-    public Media update (@PathVariable Integer id, @RequestBody Media media) {
+    public Media update (@PathVariable Long id, @RequestBody Media media) {
         return mediaService.update(id, media);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         mediaService.delete(id);
     }
 }

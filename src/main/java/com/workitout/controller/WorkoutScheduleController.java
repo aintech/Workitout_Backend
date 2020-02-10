@@ -24,22 +24,22 @@ public class WorkoutScheduleController {
     private WorkoutScheduleService workoutScheduleService;
 
     @PostMapping(value = "/{workoutId}")
-    public WorkoutSchedule save (@PathVariable Integer workoutId, @RequestBody WorkoutSchedule workoutSchedule) {
+    public WorkoutSchedule save (@PathVariable Long workoutId, @RequestBody WorkoutSchedule workoutSchedule) {
         return workoutScheduleService.save(workoutId, workoutSchedule);
     }
 
     @GetMapping(value = "/{id}")
-    public WorkoutSchedule get (@PathVariable Integer id) {
+    public WorkoutSchedule get (@PathVariable Long id) {
         return workoutScheduleService.get(id);
     }
 
     @PutMapping(value = "/{workoutScheduleId}")
-    public WorkoutSchedule update (@PathVariable Integer workoutScheduleId, @RequestBody WorkoutSchedule workoutSchedule) {
+    public WorkoutSchedule update (@PathVariable Long workoutScheduleId, @RequestBody WorkoutSchedule workoutSchedule) {
         return workoutScheduleService.update(workoutScheduleId, workoutSchedule);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         workoutScheduleService.delete(id);
     }
 

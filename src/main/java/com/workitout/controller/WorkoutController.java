@@ -29,17 +29,17 @@ public class WorkoutController {
     }
 
     @GetMapping(value = "/{id}")
-    public Workout get (@PathVariable Integer id) {
+    public Workout get (@PathVariable Long id) {
         return workoutService.get(id);
     }
 
     @PutMapping(value = "/{id}")
-    public Workout update (@PathVariable Integer id, @RequestBody Workout workout) {
+    public Workout update (@PathVariable Long id, @RequestBody Workout workout) {
         return workoutService.update(id, workout);
     }
     
     @DeleteMapping(value = "/{id}")
-    public void delete (@PathVariable Integer id) {
+    public void delete (@PathVariable Long id) {
         workoutService.delete(id);
     }
 

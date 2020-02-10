@@ -13,13 +13,13 @@ public class WorkoutHistoryService {
     @Autowired
     private WorkoutScheduleService workoutScheduleService;
 
-    public WorkoutHistory save (Integer workoutScheduleId, WorkoutHistory history) {
+    public WorkoutHistory save (Long workoutScheduleId, WorkoutHistory history) {
         WorkoutSchedule schedule = workoutScheduleService.get(workoutScheduleId);
-        history.setWorkoutSchedule(schedule);
+        history.withWorkoutSchedule(schedule);
         return repo.save(history);
     }
 
-    public WorkoutHistory get(Integer id) {
+    public WorkoutHistory get(Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find history with ID " + id));
     }
 

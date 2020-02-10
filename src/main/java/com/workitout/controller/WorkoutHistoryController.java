@@ -22,12 +22,12 @@ public class WorkoutHistoryController {
     private WorkoutHistoryService workoutHistoryService;
 
     @PostMapping(value = "/{workoutScheduleId}")
-    public WorkoutHistory save (@PathVariable Integer workoutScheduleId, @RequestBody WorkoutHistory history) {
+    public WorkoutHistory save (@PathVariable Long workoutScheduleId, @RequestBody WorkoutHistory history) {
         return workoutHistoryService.save(workoutScheduleId, history);
     }
 
     @GetMapping(value = "/{id}")
-    public WorkoutHistory get(@PathVariable Integer id) {
+    public WorkoutHistory get(@PathVariable Long id) {
         return workoutHistoryService.get(id);
     }
 

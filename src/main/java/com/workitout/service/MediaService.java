@@ -13,27 +13,23 @@ public class MediaService {
     @Autowired
     private ExerciseService exerciseService;
 
-    public Media save(Integer exerciseId, Media media) {
+    public Media save(Long exerciseId, Media media) {
         Exercise exercise = exerciseService.get(exerciseId);
-        media.setExercise(exercise);
+        media.withExercise(exercise);
         return repo.save(media);
     }
 
-    public Media get (Integer id) {
+    public Media get (Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Unable to find media with ID " + id));
     }
 
-    public Media update (Integer id, Media media) {
+    public Media update (Long id, Media media) {
         Media med = get(id);
-        med.setIndex(media.getIndex());
-        if (media.getSource().length > 0) {
-            med.setSource(media.getSource());
-        }
-        med.setUrl(media.getUrl());
+        med.updateBy(media);
         return repo.save(med);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         repo.deleteById(id);
     }
 }

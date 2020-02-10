@@ -13,13 +13,13 @@ public class WorkoutPlanToBindingService {
     @Autowired
     private WorkoutPlanService workoutPlanService;
 
-    public WorkoutToPlanBinding save (Integer workoutPlanId, WorkoutToPlanBinding binding) {
+    public WorkoutToPlanBinding save (Long workoutPlanId, WorkoutToPlanBinding binding) {
         WorkoutPlan plan = workoutPlanService.get(workoutPlanId);
-        binding.setWorkoutPlan(plan);
+        binding.withWorkoutPlan(plan);
         return repo.save(binding);
     }
 
-    public void delete (Integer id) {
+    public void delete (Long id) {
         repo.deleteById(id);
     }
 }
