@@ -34,10 +34,6 @@ public class Exercise implements Serializable {
 
     @Getter
     @Setter
-    private Integer index;
-
-    @Getter
-    @Setter
     private String name;
 
     @Enumerated(EnumType.STRING)
@@ -91,7 +87,6 @@ public class Exercise implements Serializable {
     }
 
     public void updateBy(Exercise exercise) {
-        index = exercise.index;
         instruction = exercise.instruction;
         name = exercise.name;
         externalLink = exercise.externalLink;
