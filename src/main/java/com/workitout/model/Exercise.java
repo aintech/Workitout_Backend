@@ -6,16 +6,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
@@ -53,6 +44,7 @@ public class Exercise implements Serializable {
 
     @Getter
     @Setter
+    @Column(length = 2048)
     private String instruction;
 
     /** Weight in gramms */
