@@ -62,7 +62,7 @@ public class Exercise implements Serializable {
 
     @Getter
     @Setter
-    private Long timeout;
+    private Long recovery;
     
     @JsonIgnore
     @ManyToMany(mappedBy = "exercises")
@@ -90,7 +90,7 @@ public class Exercise implements Serializable {
         instruction = exercise.instruction;
         name = exercise.name;
         externalLink = exercise.externalLink;
-        timeout = exercise.timeout;
+        recovery = exercise.recovery;
         weight = exercise.weight;
         type = exercise.type;
     }

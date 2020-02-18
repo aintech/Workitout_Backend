@@ -37,7 +37,7 @@ public class Round implements Serializable {
 
     @Getter
     @Setter
-    private Integer timeout;
+    private Integer recovery;
 
     @JsonIgnore
     @ManyToOne
@@ -53,6 +53,6 @@ public class Round implements Serializable {
     public void updateBy(Round round) {
         index = round.index;
         repeat = round.repeat;
-        timeout = round.timeout;
+        recovery = round.recovery;
     }
 }
